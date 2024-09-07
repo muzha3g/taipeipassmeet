@@ -3,7 +3,8 @@ import React from "react";
 const ActivityCard = () => {
   return (
     <>
-      <div className="card bg-base-100 w-full max-w-48 shadow-xl border-sm">
+      {/* bg-base-100 */}
+      <div className="card shadow-xl bg-base-100  w-full max-w-48 ">
         <figure className="px-10 pt-10">
           <img
             src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
@@ -19,7 +20,6 @@ const ActivityCard = () => {
           <p>地點</p>
         </div>
       </div>
-      ;
     </>
   );
 };
