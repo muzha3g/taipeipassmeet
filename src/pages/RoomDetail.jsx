@@ -8,7 +8,7 @@ const RoomDetail = () => {
         <RoomCard />
       </div>
       <br />
-      <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <button className="btn btn-wide btn-info">Join</button>
       </div>
     </>
