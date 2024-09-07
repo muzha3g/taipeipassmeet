@@ -5,7 +5,7 @@ const ActivityCard = () => {
   return (
     <>
       <div className="card bg-base-100 w-80 mb-8 shadow-xl rounded-lg">
-        <Link to="activity">
+        <Link to="/activity">
           <figure>
             <img
               src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
