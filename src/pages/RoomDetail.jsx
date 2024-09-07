@@ -1,5 +1,7 @@
 import React from "react";
 import RoomCard from "../components/RoomCard";
+import Profile from "../components/Profile";
+import RoomCardDetail from "../components/RoomCardDetail";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -24,9 +26,28 @@ const RoomDetail = () => {
   return (
     <>
       <div className="mb-20 flex flex-col items-center justify-center">
-        <RoomCard/>
+        <RoomCardDetail
+          key={room.roomID}
+          rid={room.roomID}
+          description={"歡迎來玩"}
+          name={room.roomName}
+          date={room.date}
+          time={room.time}
+          low_age={room.lowest_age}
+          high_age={room.highest_age}
+          condition={room.condition}
+          participant={room.participant}
+          roomCapacity={room.roomCapacity}
+        />
+        <div className="h-16 mt-8 flex flex-row item-center justify-around gap-2" >
+          <Profile></Profile>
+          <Profile></Profile>
+          <Profile></Profile>
+          <Profile></Profile>
+          <Profile></Profile>
+        </div>
         <div className="my-10">
-          <button className="btn btn-wide btn-info font-bold text-lg">
+          <button className="btn btn-wide btn-info font-bold text-white text-lg bg-[#5AB4C5]">
             Join
           </button>
         </div>

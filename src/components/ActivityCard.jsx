@@ -5,6 +5,7 @@ const ActivityCard = ({ id, event_name, date, time, location, img_url }) => {
   return (
     <>
       <div className="card bg-base-100 w-80 mb-8 shadow-xl rounded-lg">
+
         <Link to={`/activity/${id}`}>
           <figure>
             <img src={img_url} alt="圖片" />
