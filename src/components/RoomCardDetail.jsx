@@ -1,4 +1,5 @@
 import React from "react";
+import { GiPartyFlags } from "react-icons/gi";
 
 
 const Detail = ({context}) => {
@@ -21,9 +22,16 @@ const RoomCardDetail = ({key, rid, description, name, date, time, low_age, high_
     return (
         <>
             <div className="bg-base-200 w-80 mt-5 mx-14 rounded-lg p-8 py-5 shadow-lg">
-                <div className="text-xl font-bold">{name}</div>
-                <div className="my-2">
-                    <p>{description}</p>
+                <div className="flex flex-row">
+                    {/* <div>
+                        <GiPartyFlags />
+                    </div> */}
+                    <div className="flex flex-col">
+                        <div className="text-xl font-bold">{name}</div>
+                        <div className="my-2">
+                            <p>{description}</p>
+                        </div>
+                    </div>
                 </div>
                 <div className=" p-2 rounded-lg bg-white mt-3 flex flex-row gap-8">
                     <div>

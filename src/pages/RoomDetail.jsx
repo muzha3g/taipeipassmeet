@@ -39,12 +39,21 @@ const RoomDetail = () => {
           participant={room.participant}
           roomCapacity={room.roomCapacity}
         />
-        <div className="h-16 mt-8 flex flex-row item-center justify-around gap-2" >
+        <div className="h-16 w-2/3 mt-8 flex flex-row flex-wrap justify-start item-center gap-2" >
+          {Array.from({ length: room.participant }).map((_, index) => (
+            <Profile
+              key={index}
+              lightdark={0}/>
+          ))} {Array.from({ length: room.roomCapacity }).map((_, index) => (
+            <Profile
+              key={index}
+              lightdark={1}/>
+          ))}
+          {/* <Profile></Profile>
           <Profile></Profile>
           <Profile></Profile>
           <Profile></Profile>
-          <Profile></Profile>
-          <Profile></Profile>
+          <Profile></Profile> */}
         </div>
         <div className="my-10">
           <button className="btn btn-wide btn-info font-bold text-white text-lg bg-[#5AB4C5]">
