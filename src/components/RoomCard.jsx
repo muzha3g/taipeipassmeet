@@ -1,17 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const RoomCard = () => {
   return (
     <div>
-      <div className="collapse bg-base-200">
-        <input type="radio" name="my-accordion-1" defaultChecked />
-        <div className="collapse-title">
-          <h4>房間名稱</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
-          </p>
+      <Link to="room">
+        <div className="bg-base-200">
+          <div className="collapse-title" border-3>
+            <h3 className="fw-bold">房間名稱</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat
+            </p>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
