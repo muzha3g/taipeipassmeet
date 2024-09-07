@@ -4,14 +4,12 @@ import RoomCard from "../components/RoomCard";
 
 const ActivityDetails = () => {
   return (
-    <div>
-      <main className="m-5 px-5 d-flex flex-column ">
+    <>
+      <main className="flex flex-col justify-center items-center">
         <ActivityCard />
-        <div className="RoomList flex">
-          <RoomCard />
-        </div>
+        <RoomCard />
       </main>
-    </div>
+    </>
   );
 };
 
