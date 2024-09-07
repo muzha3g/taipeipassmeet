@@ -4,12 +4,13 @@ import RoomCard from "../components/RoomCard";
 const RoomDetail = () => {
   return (
     <>
-      <div className="mb-20">
+      <div className="mb-20 flex flex-col items-center justify-center">
         <RoomCard />
-      </div>
-      <br />
-      <div className="flex flex-col items-center justify-center">
-        <button className="btn btn-wide btn-info">Join</button>
+        <div className="my-10">
+          <button className="btn btn-wide btn-info font-bold text-lg">
+            Join
+          </button>
+        </div>
       </div>
     </>
   );
