@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <main className="m-5 px-5 d-flex flex-column ">
-      eventList.map((event) => (
+      {eventList.map((event) => (
         <ActivityCard 
           key={event.event_id}
           event_name = {event.event_name}
@@ -29,7 +29,7 @@ const Home = () => {
           time = {event.time}
           location = {event.location}
         />
-      ))
+      ))}
     </main>
   );
 };
