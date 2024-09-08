@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ActivityCard from "../components/ActivityCard";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const Home = () => {
   const [eventList, setEvents] = useState([]); // 初始值應為空數組
   const [loading, setLoading] = useState(true); // 初始化 loading 狀態
 
   useEffect(() => {
+    // 記錄 API 請求開始
+    console.log("Fetching event list...");
     axios
       .get("http://si8a1.asuscomm.com:8000/event_list")
       .then((response) => {
+        console.log("Event list fetched:", response.data.event);
         setEvents(response.data.event);
         setLoading(false); // 請求完成後將 loading 設為 false
       })
@@ -41,22 +46,25 @@ const Home = () => {
             </label>
           </div>
         </div>
-        {/* <div className="flex flex-row justify-between gap-2 mb-4">
-          <div className="py-10 w-48 bg-[#B4E2EA] rounded-lg"></div>
-          <div className="py-10 w-48 bg-[#B4E2EA] rounded-lg"></div>
-        </div> */}
-        {/* <div><p>熱門</p></div> */}
-        {eventList.map((event) => (
-          <ActivityCard
-            key={event.event_id}
-            id={event.event_id}
-            event_name={event.event_name}
-            date={event.date}
-            time={event.time}
-            location={event.location}
-            img_url={event.img_url}
-          />
-        ))}
+
+        {/* 顯示加載狀態 */}
+        {loading ? (
+          <>
+            <Skeleton count={40} />
+          </>
+        ) : (
+          eventList.map((event) => (
+            <ActivityCard
+              key={event.event_id}
+              id={event.event_id}
+              event_name={event.event_name}
+              date={event.date}
+              time={event.time}
+              location={event.location}
+              img_url={event.img_url}
+            />
+          ))
+        )}
       </main>
     </div>
   );
