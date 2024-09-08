@@ -4,8 +4,6 @@ import RoomCard from "../components/RoomCard";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
 const ActivityDetails = () => {
   const { eid } = useParams();
@@ -39,34 +37,25 @@ const ActivityDetails = () => {
   return (
     <>
       <main className="flex flex-col justify-center items-center">
-        {loading ? (
-          <Skeleton />
-        ) : (
-          <ActivityCard
-            key={event.event_id}
-            id={event.event_id}
-            event_name={event.event_name}
-            date={event.date}
-            time={event.time}
-            location={event.location}
-            img_url={event.img_url}
+        <ActivityCard
+          key={event.event_id}
+          id={event.event_id}
+          event_name={event.event_name}
+          date={event.date}
+          time={event.time}
+          location={event.location}
+          img_url={event.img_url}
+        />
+        {roomList.map((room) => (
+          <RoomCard
+            key={room.roomID}
+            eid={eid}
+            rid={room.roomID}
+            name={room.roomName}
+            date={room.date}
+            time={room.time}
           />
-        )}
-
-        {loading ? (
-          <Skeleton />
-        ) : (
-          roomList.map((room) => (
-            <RoomCard
-              key={room.roomID}
-              eid={eid}
-              rid={room.roomID}
-              name={room.roomName}
-              date={room.date}
-              time={room.time}
-            />
-          ))
-        )}
+        ))}
       </main>
     </>
   );
