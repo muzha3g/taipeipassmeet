@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ActivityCard from "../components/ActivityCard";
-import LoadingSkeleton from "../components/LoadingSkeleton";
 
 const Home = () => {
   const [eventList, setEvents] = useState([]); // 初始值應為空數組
@@ -42,23 +41,22 @@ const Home = () => {
             </label>
           </div>
         </div>
-
-        {/* 根據 loading 狀態來顯示 skeleton 或內容 */}
-        {loading ? (
-          <LoadingSkeleton />
-        ) : (
-          eventList.map((event) => (
-            <ActivityCard
-              key={event.event_id}
-              id={event.event_id}
-              event_name={event.event_name}
-              date={event.date}
-              time={event.time}
-              location={event.location}
-              img_url={event.img_url}
-            />
-          ))
-        )}
+        {/* <div className="flex flex-row justify-between gap-2 mb-4">
+          <div className="py-10 w-48 bg-[#B4E2EA] rounded-lg"></div>
+          <div className="py-10 w-48 bg-[#B4E2EA] rounded-lg"></div>
+        </div> */}
+        {/* <div><p>熱門</p></div> */}
+        {eventList.map((event) => (
+          <ActivityCard
+            key={event.event_id}
+            id={event.event_id}
+            event_name={event.event_name}
+            date={event.date}
+            time={event.time}
+            location={event.location}
+            img_url={event.img_url}
+          />
+        ))}
       </main>
     </div>
   );
