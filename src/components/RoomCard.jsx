@@ -17,7 +17,7 @@ const RoomCard = ({eid, rid, name, date, time}) => {
             </div>
             </div>
           <div className="ml-3">
-            <CgDetailsMore size={36} color="#CAD1D5"/>
+            <CgDetailsMore size={34} color="#CAD1D5"/>
           </div>
         </div>
         </Link>
