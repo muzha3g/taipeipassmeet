@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { IoMdInformationCircleOutline } from "react-icons/io";
+import myImage from "../assets/images/image.jpg";
 
 const ActivityDetails = () => {
   const { eid } = useParams();
@@ -42,7 +43,7 @@ const ActivityDetails = () => {
           date={event.date}
           time={event.time}
           location={event.location}
-          img_url={event.img_url}
+          img_url={myImage}
         />
         <div>
           <div className=" w-80 mp-2 mx-14 rounded-lg px-5 py-5 border-2 border-[#93D4DF]">
