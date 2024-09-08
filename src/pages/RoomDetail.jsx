@@ -29,7 +29,7 @@ const RoomDetail = () => {
         <RoomCardDetail
           key={room.roomID}
           rid={room.roomID}
-          description={"歡迎來玩"}
+          description={"臺北發大財 !"}
           name={room.roomName}
           date={room.date}
           time={room.time}
@@ -44,11 +44,15 @@ const RoomDetail = () => {
             <Profile
               key={index}
               lightdark={0}/>
-          ))} {Array.from({ length: room.roomCapacity }).map((_, index) => (
+          ))} {Array.from({ length: room.roomCapacity-room.participant }).map((_, index) => (
             <Profile
               key={index}
               lightdark={1}/>
           ))}
+          <div className="font-bold text-lg" style={{ color: '#93D4DF' }}>{room.participant}/{room.roomCapacity}</div>
+          <Profile
+            lightdark={2}/>
+          <div className="font-bold text-lg" style={{ color: '#F5BA4B' }}>+1</div>
           {/* <Profile></Profile>
           <Profile></Profile>
           <Profile></Profile>
