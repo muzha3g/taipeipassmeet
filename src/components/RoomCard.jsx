@@ -8,7 +8,7 @@ const RoomCard = ({eid, rid, name, date, time}) => {
     <>
       <div className="bg-base-200 w-80 mt-5 mx-14 rounded-lg p-8 py-5 shadow-lg">
         <Link to={`/activity/${eid}/room/${rid}`}>
-        <div className="flex flex-row items-center gap-5">
+        <div className="flex flex-row items-center gap-4">
           <div>
             <div className="text-xl font-bold mb-2">{name}</div>
             <div className="flex flex-row gap-4">
