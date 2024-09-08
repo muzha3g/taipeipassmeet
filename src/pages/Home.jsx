@@ -37,13 +37,13 @@ const Home = () => {
               </svg>
             </label>
           </div>
-          <div className="py-5 w-12 bg-[#5AB4C5] rounded-lg"></div>
+          {/* <div className="py-5 w-12 bg-[#5AB4C5] rounded-lg"></div> */}
         </div>
-        <div className="flex flex-row justify-between gap-2 mb-4">
+        {/* <div className="flex flex-row justify-between gap-2 mb-4">
           <div className="py-10 w-48 bg-[#B4E2EA] rounded-lg"></div>
           <div className="py-10 w-48 bg-[#B4E2EA] rounded-lg"></div>
-        </div>
-        <div><p>熱門</p></div>
+        </div> */}
+        {/* <div><p>熱門</p></div> */}
         {eventList.map((event) => (
           <ActivityCard
             key={event.event_id}
